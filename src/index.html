@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Tudu List</title>
 </head>
 
@@ -17,28 +18,16 @@
               <h3>Today's To Do</h3>
             </div>
             <div class="grow flex justify-end">
-              <button>Refresh</button>
+              <button class="material-icons bg-none border-none">sync</button>
             </div>
           </div>
         </li>
         <li class="flex items-center">
-          <input type="text" class="width-100%" placeholder="Add to your list">
+          <input type="text" class="width-100% border-none" placeholder="Add to your list">
         </li>
       </ul>
 
-      <ul id="todo_list" class="list">
-        <li class="flex items-center">
-          <div class="flex items-center width-100%">
-            <div class="flex items-center space-between">
-              <div class="clearance-right"><input type="checkbox"></div>
-              <div>
-                <h4>Blah blah blah</h4>
-              </div>
-            </div>
-            <div class="flex grow justify-end"><button>:</button></div>
-
-        </li>
-      </ul>
+      <ul id="todo_list" class="list"></ul>
     </div>
     <div><button class="width-100% padding-sm">Clear all completed </button></div>
   </div>

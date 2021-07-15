@@ -45,7 +45,7 @@ li {
   padding-left: 32px;
   padding-right: 32px;
   list-style: none;
-  border-bottom: 1px solid #f9f9f9;
+  border-bottom: 2px solid #e9e6e6;
 }
 
 .justify-end {
@@ -62,4 +62,16 @@ li {
 
 .items-center {
   align-items: center;
+}
+
+.border-none {
+  border: 0;
+}
+
+.bg-none {
+  background: none;
+}
+
+input:focus {
+  outline: none;
 }
