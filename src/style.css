@@ -10,9 +10,8 @@ body {
 .container {
   max-width: 500px;
   margin: auto;
-  /* border-radius: 32px; */
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
+} 
 
 .flex {
   display: flex;
@@ -25,6 +24,7 @@ body {
 .clearance-right {
   margin-right: 32px;
 }
+
 .grow {
   flex-grow: 1;
 }
@@ -41,6 +41,7 @@ ul {
 li {
   height: 50px;
 }
+
 .list li {
   padding-left: 32px;
   padding-right: 32px;
