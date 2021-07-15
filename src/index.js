@@ -1,6 +1,6 @@
+/* eslint-disable no-restricted-globals */
 import './style.css'
 
-//new list 
 function g(e) {
   return document.getElementById(e)
 }
@@ -46,14 +46,5 @@ function loadTodo() {
   }
 }
 
-onload = loadTodo()
-
-// //add to do list 
-// const task = document.forms['add-todo-List']
-// addTask.addEventListener('submit', function (e) {
-//   const a = addTask.querySelector('input[type="text"]').value
-//   //create todo list 
-//   const li = document.createElement('li')
-//   const title = document.createElement('h4')
-//   const btn = document.createElement('button')
-// })
+onload = loadTodo();
+/* eslint-disable no-restricted-globals */
