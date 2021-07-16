@@ -73,6 +73,35 @@ li {
   background: none;
 }
 
+.x {
+  position: relative;
+  z-index: 1000;
+}
+
 input:focus {
   outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.drop-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.drag-over {
+  background-color: rgb(197, 197, 197);
+}
+
+.strike {
+  text-decoration: line-through;
 }
