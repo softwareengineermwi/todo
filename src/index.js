@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-plusplus */
 import './style.css';
 import { dragstart } from './draggability';
 import { dragover } from './draggability';
@@ -102,5 +100,3 @@ function loadTodo() {
 }
 
 onload = updateIndices(() => { loadTodo() });
-/* eslint-disable no-plusplus */
-/* eslint-disable no-restricted-globals */

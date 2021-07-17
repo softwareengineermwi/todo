@@ -64,7 +64,7 @@ export function del(btn, foo) {
 export function clear() {
   let tasks = JSON.parse(localStorage.getItem('things'))
   if (tasks !== null && tasks.length > 0) {
-    tasks = tasks.filter(check)    // Returns [32, 33, 40]
+    tasks = tasks.filter(check)
     function check(item) {
       return item.completed == false;
     }
