@@ -2,10 +2,6 @@
 
 In this project, I have built a web app based todo list. I've achieved by using the Webpack Framework.
 
-## Live Link
-
-[Live Link](https://softwareengineermwi.github.io/todo/)
-
 ## Project Requirements
 
 Implement only a basic UI with plain HTML:
@@ -43,4 +39,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://github.com/softwareengineermwi/todo/blob/dragdrop/LICENSE) licensed.
