@@ -23,7 +23,10 @@
           </div>
         </li>
         <li class="flex items-center">
-          <input type="text" class="width-100% border-none" placeholder="Add to your list">
+          <form id="form">
+            <input type="text" id="input-description" class="width-100% border-none" placeholder="Add to your list">
+            <input type="submit" class="hide">
+          </form>
         </li>
       </ul>
 
@@ -42,7 +45,7 @@
       </ul>
     </div>
 
-    <button type="button" class="width-100% padding-sm">Clear all completed </button>
+    <button type="button" id="clear" class="width-100% padding-sm">Clear all completed </button>
   </div>
 </body>
 
