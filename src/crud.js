@@ -1,6 +1,8 @@
 export function updateIndices(callback) {
   let tasks = JSON.parse(localStorage.getItem('things'))
+
   let updatedTasks = []
+
   if (tasks !== null && tasks.length > 0) {
     for (let k = 0; k < tasks.length; k++) {
       let item = tasks[k];
@@ -46,6 +48,7 @@ export function apply(change, position) {
 
 export function del(btn, foo) {
   let tasks = JSON.parse(localStorage.getItem('things'))
+  
   if (foo) {
     btn.innerText = 'delete'
     btn.addEventListener('click', () => {
