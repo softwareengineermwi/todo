@@ -46,15 +46,14 @@ export function apply(change, position) {
   localStorage.setItem('things', JSON.stringify(tasks))
 }
 
-export function del(btn, foo) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  
+export function del(btn, foo, tasks) {
   if (foo) {
     btn.innerText = 'delete'
     btn.addEventListener('click', () => {
       tasks.splice(parseInt(btn.value), 1)
-      localStorage.setItem('things', JSON.stringify(tasks))
-      location.reload()
+      return tasks
+      // localStorage.setItem('things', JSON.stringify(tasks))
+      // location.reload()
     })
   } else {
     btn.innerText = 'more_vert'
