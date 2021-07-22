@@ -1,20 +1,11 @@
 import './style.css';
-import { dragstart } from './draggability';
-import { dragover } from './draggability';
-import { drop } from './draggability';
-import { dragleave } from './draggability';
+import { dragstart, dragover, drop, dragleave } from './draggability';
 import { onchange } from './status';
-import { add, del } from './crud'
-import { apply, clear, updateIndices } from './crud'
+import { apply, clear, updateIndices, del, add } from './crud'
 
 function g(e) {
   return document.getElementById(e);
 }
-
-g('form').addEventListener('submit', (e) => {
-  e.preventDefault()
-  add(g('input-description').value)
-})
 
 function loadTodo() {
   if (localStorage.getItem('things') !== null) {
@@ -89,7 +80,6 @@ function loadTodo() {
 
       dropArea.addEventListener('dragover', dragover)
       dropArea.addEventListener('dragleave', dragleave)
-      dropArea.addEventListener('dragover', dragover)
       dropArea.addEventListener('drop', drop);
 
       g('todo_list').appendChild(tasktemplate);
@@ -98,5 +88,10 @@ function loadTodo() {
     g('clear').addEventListener('click', clear)
   }
 }
+
+g('form').addEventListener('submit', (e) => {
+  e.preventDefault()
+  add(g('input-description').value)
+})
 
 onload = updateIndices(() => { loadTodo() });
