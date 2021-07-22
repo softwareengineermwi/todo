@@ -3,14 +3,14 @@ import { dragstart, dragover, drop, dragleave } from './draggability';
 import { onchange } from './status';
 import { apply, clear, updateIndices, del, add } from './crud';
 
+const tasks = JSON.parse(localStorage.getItem('things'));
+
 function g(e) {
   return document.getElementById(e);
 }
 
 function loadTodo() {
-  if (localStorage.getItem('things') !== null) {
-    const tasks = JSON.parse(localStorage.getItem('things'));
-
+  if (tasks !== null) {
     console.log(tasks);
 
     for (let x = 0; x < tasks.length; x++) {
@@ -97,9 +97,11 @@ function loadTodo() {
 
 g('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  add(g('input-description').value);
+  localStorage.setItem('things', JSON.stringify(add(g('input-description').value, tasks)))
+  location.reload()
 });
 
-onload = updateIndices(() => {
-  loadTodo();
-});
+onload = updateIndices(tasks, () => {
+  localStorage.setItem('things', JSON.stringify(tasks))
+  loadTodo()
+})
