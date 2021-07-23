@@ -19,10 +19,14 @@ function reload() {
 
 function loadTodo() {
   if (tasks !== null) {
-    console.log(tasks);
+    const updatedTasks = updateIndices(tasks)
 
-    for (let x = 0; x < tasks.length; x++) {
-      const task = tasks[x];
+    console.log(updatedTasks.map((j)=>{return j.index}).toString())
+
+    localStorage.setItem('things', JSON.stringify(updatedTasks))
+
+    for (let x = 0; x < updatedTasks.length; x++) {
+      const task = updatedTasks[x];
 
       const tasktemplate = document.createElement('li');
       tasktemplate.id = x;
@@ -111,7 +115,6 @@ g('form').addEventListener('submit', (e) => {
   reload()
 });
 
-onload = updateIndices(tasks, () => {
-  localStorage.setItem('things', jsonify(tasks))
-  loadTodo()
-})
+
+
+onload = loadTodo()

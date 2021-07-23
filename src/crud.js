@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.update = exports.updateIndices = exports.add = exports.del = void 0;
-function updateIndices(tasks, callback) {
+exports.clear = exports.update = exports.updateIndices = exports.add = exports.del = void 0;
+function updateIndices(tasks) {
     let updatedTasks = [];
     if (tasks !== null && tasks.length > 0) {
         for (let k = 0; k < tasks.length; k += 1) {
@@ -9,7 +9,7 @@ function updateIndices(tasks, callback) {
             item.index = k + 1;
             updatedTasks.push(item);
             if (k == tasks.length - 1) {
-                callback();
+                return updatedTasks;
             }
         }
     }
@@ -45,4 +45,14 @@ function del(tasks, position) {
     return tasks;
 }
 exports.del = del;
+function clear(tasks) {
+    if (tasks !== null && tasks.length > 0) {
+        tasks = tasks.filter(check);
+        function check(item) {
+            return item.completed == false;
+        }
+        return tasks;
+    }
+}
+exports.clear = clear;
 //# sourceMappingURL=crud.js.map

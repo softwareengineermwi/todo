@@ -1,4 +1,4 @@
-function updateIndices(tasks: any, callback: () => void) {
+function updateIndices(tasks: any): number[] {
   let updatedTasks = [];
   if (tasks !== null && tasks.length > 0) {
     for (let k = 0; k < tasks.length; k += 1) {
@@ -6,7 +6,7 @@ function updateIndices(tasks: any, callback: () => void) {
       item.index = k + 1
       updatedTasks.push(item)
       if (k == (tasks as number[]).length - 1) {
-        callback()
+        return updatedTasks
       }
     }
   }
@@ -42,4 +42,14 @@ function del(tasks: number[], position: number): number[] {
   return tasks
 }
 
-export { del, add, updateIndices, update }
+function clear(tasks: number[]): number[] {
+  if (tasks !== null && tasks.length > 0) {
+    tasks = tasks.filter(check)
+    function check(item: any) {
+      return item.completed == false
+    }
+    return tasks
+  }
+}
+
+export { del, add, updateIndices, update, clear }
