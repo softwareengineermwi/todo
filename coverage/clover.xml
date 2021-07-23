@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1627038052400" clover="3.2.0">
+  <project timestamp="1627038052400" name="All files">
+    <metrics statements="24" coveredstatements="13" conditionals="11" coveredconditionals="4" methods="5" coveredmethods="4" elements="40" coveredelements="21" complexity="0" loc="24" ncloc="24" packages="1" files="2" classes="2"/>
+    <file name="crud.ts" path="C:\Users\paawo\OneDrive\Documents\p\paa\web\public\main\school\done\todo\src\crud.ts">
+      <metrics statements="19" coveredstatements="8" conditionals="11" coveredconditionals="4" methods="4" coveredmethods="3"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="16" count="1" type="cond" truecount="4" falsecount="1"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+    </file>
+    <file name="status.ts" path="C:\Users\paawo\OneDrive\Documents\p\paa\web\public\main\school\done\todo\src\status.ts">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

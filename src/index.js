@@ -1,12 +1,20 @@
 import './style.css';
 import { dragstart, dragover, drop, dragleave } from './draggability';
-import { onchange } from './status';
-import { apply, clear, updateIndices, del, add } from './crud';
+import { onChange } from './status';
+import { update, clear, updateIndices, del, add } from './crud';
 
 const tasks = JSON.parse(localStorage.getItem('things'));
 
 function g(e) {
   return document.getElementById(e);
+}
+
+function jsonify(data) {
+  return JSON.stringify(data)
+}
+
+function reload() {
+  location.reload()
 }
 
 function loadTodo() {
@@ -55,16 +63,14 @@ function loadTodo() {
       btn.innerText = 'more_vert';
 
       h4.addEventListener('input', (e) => {
-        apply(e.target.textContent, e.target.getAttribute('data-id'));
+        localStorage.setItem('things', jsonify(update(e.target.textContent, x, tasks)))
       });
 
       h4.addEventListener('click', () => {
-        // localStorage.setItem('things', JSON.stringify(del(btn, true, tasks)));
-        // location.reload();
         btn.innerText = 'delete';
         btn.addEventListener('click', () => {
-          localStorage.setItem('things', JSON.stringify(del(tasks, btn.value)));
-          location.reload();
+          localStorage.setItem('things', jsonify(del(tasks, btn.value)));
+          reload();
         });
       });
 
@@ -82,7 +88,11 @@ function loadTodo() {
       input.type = 'checkbox';
       input.setAttribute('data-id', x);
       input.checked = task.completed;
-      input.addEventListener('change', onchange);
+
+      input.addEventListener('change', () => {
+        localStorage.setItem('things', jsonify(onChange(tasks, x)))
+        reload()
+      });
 
       dropArea.addEventListener('dragover', dragover);
       dropArea.addEventListener('dragleave', dragleave);
@@ -97,11 +107,11 @@ function loadTodo() {
 
 g('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  localStorage.setItem('things', JSON.stringify(add(g('input-description').value, tasks)))
-  location.reload()
+  localStorage.setItem('things', jsonify(add(g('input-description').value, tasks)))
+  reload()
 });
 
 onload = updateIndices(tasks, () => {
-  localStorage.setItem('things', JSON.stringify(tasks))
+  localStorage.setItem('things', jsonify(tasks))
   loadTodo()
 })

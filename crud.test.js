@@ -1,4 +1,4 @@
-const { del, add } = require('./src/crud');
+const { del, add, update } = require('./src/crud');
 
 let tasks = [
   {
@@ -31,4 +31,10 @@ test('Should delete item from localstorage', () => {
 test('Should add item to localStorage', () => {
   const currentLength = tasks.length
   expect(add('Some description here', tasks).length).toBe(currentLength + 1)
+})
+
+test('Should update the task description', () => {
+  const position = 0
+  const description = "New description"
+  expect(update(description, position, tasks)[position].description).toBe(tasks[position].description)
 })

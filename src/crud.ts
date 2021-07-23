@@ -12,18 +12,34 @@ function updateIndices(tasks: any, callback: () => void) {
   }
 }
 
+function add(description: string, tasks: any): number[] {
+  if (tasks !== null && tasks !== undefined && tasks.length > 0) {
+    tasks.push({
+      index: (tasks as number[]).length,
+      completed: false,
+      description: description,
+    })
+    return tasks
+  } else {
+    let newTasks = []
+    newTasks.push({
+      index: 1,
+      completed: false,
+      description: description,
+    })
+
+    return newTasks
+  }
+}
+
+function update(change: string, position: number, tasks: any): number[] {
+  tasks[position].description = change
+  return tasks
+}
+
 function del(tasks: number[], position: number): number[] {
   tasks.splice(position, 1)
   return tasks
 }
 
-function add(description: string, tasks: any): number[] {
-  tasks.push({
-    index: (tasks as number[]).length,
-    completed: false,
-    description: description,
-  })
-  return tasks
-}
-
-export { del, add, updateIndices }
+export { del, add, updateIndices, update }
