@@ -1,77 +1,58 @@
-export function updateIndices(callback) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-
-  let updatedTasks = []
-
-  if (tasks !== null && tasks.length > 0) {
-    for (let k = 0; k < tasks.length; k++) {
-      let item = tasks[k];
-      item.index = k + 1
-      updatedTasks.push(item)
-
-      if (k == tasks.length - 1) {
-        localStorage.setItem('things', JSON.stringify(updatedTasks))
-        callback()
-      }
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.clear = exports.update = exports.updateIndices = exports.add = exports.del = void 0;
+function updateIndices(tasks) {
+    let updatedTasks = [];
+    if (tasks !== null && tasks.length > 0) {
+        for (let k = 0; k < tasks.length; k += 1) {
+            const item = tasks[k];
+            item.index = k + 1;
+            updatedTasks.push(item);
+            if (k == tasks.length - 1) {
+                return updatedTasks;
+            }
+        }
     }
-  }
 }
-
-export function add(description) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  if (tasks !== null && tasks.length > 0) {
-    let length = tasks.length
-    tasks.push({
-      index: length,
-      completed: false,
-      description: description
-    })
-    localStorage.setItem('things', JSON.stringify(tasks))
-    location.reload()
-  } else {
-    let tasks = []
-    tasks.push({
-      index: length,
-      completed: false,
-      description: description
-    })
-    localStorage.setItem('things', JSON.stringify(tasks))
-    location.reload()
-  }
-}
-
-export function apply(change, position) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  tasks[parseInt(position)].description = change
-  localStorage.setItem('things', JSON.stringify(tasks))
-}
-
-export function del(btn, foo) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  
-  if (foo) {
-    btn.innerText = 'delete'
-    btn.addEventListener('click', () => {
-      tasks.splice(parseInt(btn.value), 1)
-      localStorage.setItem('things', JSON.stringify(tasks))
-      location.reload()
-    })
-  } else {
-    btn.innerText = 'more_vert'
-    setTimeout(() => {
-      btn.removeEventListener('click', () => { })
-    }, 2000)
-  }
-}
-
-export function clear() {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  if (tasks !== null && tasks.length > 0) {
-    tasks = tasks.filter(check)
-    function check(item) {
-      return item.completed == false;
+exports.updateIndices = updateIndices;
+function add(description, tasks) {
+    if (tasks !== null && tasks !== undefined && tasks.length > 0) {
+        tasks.push({
+            index: tasks.length,
+            completed: false,
+            description: description,
+        });
+        return tasks;
     }
-    localStorage.setItem('things', JSON.stringify(tasks))
-    location.reload()
-  }
+    else {
+        let newTasks = [];
+        newTasks.push({
+            index: 1,
+            completed: false,
+            description: description,
+        });
+        return newTasks;
+    }
 }
+exports.add = add;
+function update(change, position, tasks) {
+    tasks[position].description = change;
+    return tasks;
+}
+exports.update = update;
+function del(tasks, position) {
+    tasks.splice(position, 1);
+    return tasks;
+}
+exports.del = del;
+function clear(tasks) {
+    if (tasks !== null && tasks.length > 0) {
+        tasks = tasks.filter(check);
+        function check(item) {
+            return item.completed == false;
+        }
+        return tasks;
+    }
+}
+exports.clear = clear;
+//# sourceMappingURL=crud.js.map

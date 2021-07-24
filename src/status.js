@@ -1,8 +1,11 @@
-export function onchange(e) {
-  let tasks = JSON.parse(localStorage.getItem('things'))
-  
-  let task = tasks[parseInt(e.target.getAttribute('data-id'))]
-  task.completed = !task.completed
-  localStorage.setItem('things', JSON.stringify(tasks))
-  location.reload()
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.onChange = void 0;
+function onChange(tasks, position) {
+    console.log(tasks);
+    console.log(tasks[parseInt(position)]);
+    tasks[parseInt(position)].completed = !tasks[parseInt(position)].completed;
+    return tasks;
 }
+exports.onChange = onChange;
+//# sourceMappingURL=status.js.map

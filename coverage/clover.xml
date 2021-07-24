@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1627058797017" clover="3.2.0">
+  <project timestamp="1627058797017" name="All files">
+    <metrics statements="28" coveredstatements="25" conditionals="15" coveredconditionals="12" methods="7" coveredmethods="7" elements="50" coveredelements="44" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+    <file name="crud.ts" path="C:\Users\paawo\OneDrive\Documents\p\paa\web\public\main\school\done\todo\src\crud.ts">
+      <metrics statements="23" coveredstatements="20" conditionals="15" coveredconditionals="12" methods="6" coveredmethods="6"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="16" count="1" type="cond" truecount="4" falsecount="1"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="46" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="49" count="4" type="stmt"/>
+      <line num="51" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+    </file>
+    <file name="status.ts" path="C:\Users\paawo\OneDrive\Documents\p\paa\web\public\main\school\done\todo\src\status.ts">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
