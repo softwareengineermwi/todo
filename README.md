@@ -2,6 +2,10 @@
 
 In this project, I have built a web app based todo list. I've achieved by using the Webpack Framework.
 
+## Live Link
+
+[Live Link](https://softwareengineermwi.github.io/todo/)
+
 ## Project Requirements
 
 Implement only a basic UI with plain HTML:
